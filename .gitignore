@@ -1,0 +1,18 @@
+# ignore output folders
+bin/
+obj/
+ipch/
+
+# ignore user-specific options files
+Thumbs.db
+*.sln.cache
+*.ncb
+*.suo
+*.csproj.user
+*.vcproj.*.user
+*.vcxproj.user
+_ReSharper.*
+*.sdf
+*.opensdf
+*.[Rr]e[Ss]harper
+*.[Rr]e[Ss]harper.user
