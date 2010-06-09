@@ -35,6 +35,7 @@
 			this.FeaturesListBox = new System.Windows.Forms.ListBox();
 			this.EventsLabel = new System.Windows.Forms.Label();
 			this.EventsListBox = new System.Windows.Forms.ListBox();
+			this.EventCountLabel = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// ThePanel
@@ -97,11 +98,21 @@
 			this.EventsListBox.Size = new System.Drawing.Size(460, 121);
 			this.EventsListBox.TabIndex = 4;
 			// 
+			// EventCountLabel
+			// 
+			this.EventCountLabel.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.EventCountLabel.Location = new System.Drawing.Point(422, 315);
+			this.EventCountLabel.Name = "EventCountLabel";
+			this.EventCountLabel.Size = new System.Drawing.Size(50, 13);
+			this.EventCountLabel.TabIndex = 5;
+			this.EventCountLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(484, 462);
+			this.Controls.Add(this.EventCountLabel);
 			this.Controls.Add(this.EventsListBox);
 			this.Controls.Add(this.EventsLabel);
 			this.Controls.Add(this.FeaturesListBox);
@@ -123,6 +134,7 @@
 		private System.Windows.Forms.ListBox FeaturesListBox;
 		private System.Windows.Forms.Label EventsLabel;
 		private System.Windows.Forms.ListBox EventsListBox;
+		private System.Windows.Forms.Label EventCountLabel;
 	}
 }
 

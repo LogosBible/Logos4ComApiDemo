@@ -29,8 +29,8 @@
 		private void InitializeComponent()
 		{
 			this.DataTypeLabel = new System.Windows.Forms.Label();
-			this.DataTypeViewLink = new System.Windows.Forms.LinkLabel();
-			this.ReferenceViewLink = new System.Windows.Forms.LinkLabel();
+			this.DataTypeViewLink = new DataTypeLinkLabel();
+			this.ReferenceViewLink = new ReferenceLinkLabel();
 			this.ReferenceLabel = new System.Windows.Forms.Label();
 			this.DataTypeComboBox = new System.Windows.Forms.ComboBox();
 			this.ReferenceComboBox = new System.Windows.Forms.ComboBox();
@@ -55,7 +55,6 @@
 			this.DataTypeViewLink.TabIndex = 2;
 			this.DataTypeViewLink.TabStop = true;
 			this.DataTypeViewLink.Text = "View";
-			this.DataTypeViewLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.DataTypeViewLink_LinkClicked);
 			// 
 			// ReferenceViewLink
 			// 
@@ -67,7 +66,6 @@
 			this.ReferenceViewLink.TabIndex = 5;
 			this.ReferenceViewLink.TabStop = true;
 			this.ReferenceViewLink.Text = "View";
-			this.ReferenceViewLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ReferenceViewLink_LinkClicked);
 			// 
 			// ReferenceLabel
 			// 
@@ -132,8 +130,8 @@
 		#endregion
 
 		private System.Windows.Forms.Label DataTypeLabel;
-		private System.Windows.Forms.LinkLabel DataTypeViewLink;
-		private System.Windows.Forms.LinkLabel ReferenceViewLink;
+		private DataTypeLinkLabel DataTypeViewLink;
+		private ReferenceLinkLabel ReferenceViewLink;
 		private System.Windows.Forms.Label ReferenceLabel;
 		private System.Windows.Forms.ComboBox DataTypeComboBox;
 		private System.Windows.Forms.ComboBox ReferenceComboBox;

@@ -35,6 +35,11 @@ namespace Logos4ComApiDemo
 			TitleTextBox.Text = dataType.Title;
 			SortTitleTextBox.Text = dataType.SortTitle;
 			AbbrevTextBox.Text = dataType.AbbreviatedTitle;
+
+			ThePanel.Controls.Clear();
+			object details = dataType.Details;
+			if (details is ILogosBibleDataTypeDetails)
+				ThePanel.Controls.Add(new BibleDataTypePane(dataType));
 		}
 
 		private void BackLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -48,24 +53,16 @@ namespace Logos4ComApiDemo
 
 		private void ParseTextBox_TextChanged(object sender, EventArgs e)
 		{
-			m_parsedReference = m_dataType.ParseReference(ParseTextBox.Text);
+			ParseLink.Reference = m_dataType.ParseReference(ParseTextBox.Text);
 			UpdateControls();
 		}
 
 		private void UpdateControls()
 		{
 			BackLink.Visible = m_history.Count != 0;
-			ParseLink.Text = m_parsedReference == null ? string.Empty : m_parsedReference.Save();
-		}
-
-		private void ParseLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-		{
-			if (m_parsedReference != null)
-				MainForm.Instance.ReferenceForm.Reference = m_parsedReference;
 		}
 
 		LogosDataType m_dataType;
 		readonly Stack<LogosDataType> m_history;
-		LogosDataTypeReference m_parsedReference;
 	}
 }

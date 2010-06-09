@@ -31,11 +31,8 @@
 			this.ReferenceLabel = new System.Windows.Forms.Label();
 			this.ReferenceTextBox = new System.Windows.Forms.TextBox();
 			this.DataTypeLabel = new System.Windows.Forms.Label();
-			this.DataTypeLink = new System.Windows.Forms.LinkLabel();
 			this.RangeStartLabel = new System.Windows.Forms.Label();
-			this.RangeStartLink = new System.Windows.Forms.LinkLabel();
 			this.RangeEndLabel = new System.Windows.Forms.Label();
-			this.RangeEndLink = new System.Windows.Forms.LinkLabel();
 			this.BackLink = new System.Windows.Forms.LinkLabel();
 			this.RenderShortTextBox = new System.Windows.Forms.TextBox();
 			this.RenderShortLabel = new System.Windows.Forms.Label();
@@ -45,6 +42,10 @@
 			this.RenderLongLabel = new System.Windows.Forms.Label();
 			this.RenderDisplayTextBox = new System.Windows.Forms.TextBox();
 			this.RenderDisplayLabel = new System.Windows.Forms.Label();
+			this.RangeEndLink = new Logos4ComApiDemo.ReferenceLinkLabel();
+			this.RangeStartLink = new Logos4ComApiDemo.ReferenceLinkLabel();
+			this.DataTypeLink = new Logos4ComApiDemo.DataTypeLinkLabel();
+			this.ThePanel = new System.Windows.Forms.Panel();
 			this.SuspendLayout();
 			// 
 			// ReferenceLabel
@@ -53,7 +54,7 @@
 			this.ReferenceLabel.Location = new System.Drawing.Point(12, 13);
 			this.ReferenceLabel.Name = "ReferenceLabel";
 			this.ReferenceLabel.Size = new System.Drawing.Size(60, 13);
-			this.ReferenceLabel.TabIndex = 3;
+			this.ReferenceLabel.TabIndex = 0;
 			this.ReferenceLabel.Text = "Reference:";
 			// 
 			// ReferenceTextBox
@@ -65,7 +66,7 @@
 			this.ReferenceTextBox.Name = "ReferenceTextBox";
 			this.ReferenceTextBox.ReadOnly = true;
 			this.ReferenceTextBox.Size = new System.Drawing.Size(342, 13);
-			this.ReferenceTextBox.TabIndex = 4;
+			this.ReferenceTextBox.TabIndex = 1;
 			// 
 			// DataTypeLabel
 			// 
@@ -73,19 +74,8 @@
 			this.DataTypeLabel.Location = new System.Drawing.Point(12, 32);
 			this.DataTypeLabel.Name = "DataTypeLabel";
 			this.DataTypeLabel.Size = new System.Drawing.Size(60, 13);
-			this.DataTypeLabel.TabIndex = 5;
+			this.DataTypeLabel.TabIndex = 2;
 			this.DataTypeLabel.Text = "Data Type:";
-			// 
-			// DataTypeLink
-			// 
-			this.DataTypeLink.AutoSize = true;
-			this.DataTypeLink.Location = new System.Drawing.Point(82, 32);
-			this.DataTypeLink.Name = "DataTypeLink";
-			this.DataTypeLink.Size = new System.Drawing.Size(57, 13);
-			this.DataTypeLink.TabIndex = 6;
-			this.DataTypeLink.TabStop = true;
-			this.DataTypeLink.Text = "(data type)";
-			this.DataTypeLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.DataTypeLink_LinkClicked);
 			// 
 			// RangeStartLabel
 			// 
@@ -93,19 +83,8 @@
 			this.RangeStartLabel.Location = new System.Drawing.Point(12, 51);
 			this.RangeStartLabel.Name = "RangeStartLabel";
 			this.RangeStartLabel.Size = new System.Drawing.Size(67, 13);
-			this.RangeStartLabel.TabIndex = 5;
+			this.RangeStartLabel.TabIndex = 4;
 			this.RangeStartLabel.Text = "Range Start:";
-			// 
-			// RangeStartLink
-			// 
-			this.RangeStartLink.AutoSize = true;
-			this.RangeStartLink.Location = new System.Drawing.Point(82, 51);
-			this.RangeStartLink.Name = "RangeStartLink";
-			this.RangeStartLink.Size = new System.Drawing.Size(63, 13);
-			this.RangeStartLink.TabIndex = 6;
-			this.RangeStartLink.TabStop = true;
-			this.RangeStartLink.Text = "(range start)";
-			this.RangeStartLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RangeStartLink_LinkClicked);
 			// 
 			// RangeEndLabel
 			// 
@@ -113,19 +92,8 @@
 			this.RangeEndLabel.Location = new System.Drawing.Point(12, 70);
 			this.RangeEndLabel.Name = "RangeEndLabel";
 			this.RangeEndLabel.Size = new System.Drawing.Size(64, 13);
-			this.RangeEndLabel.TabIndex = 5;
+			this.RangeEndLabel.TabIndex = 6;
 			this.RangeEndLabel.Text = "Range End:";
-			// 
-			// RangeEndLink
-			// 
-			this.RangeEndLink.AutoSize = true;
-			this.RangeEndLink.Location = new System.Drawing.Point(82, 70);
-			this.RangeEndLink.Name = "RangeEndLink";
-			this.RangeEndLink.Size = new System.Drawing.Size(61, 13);
-			this.RangeEndLink.TabIndex = 6;
-			this.RangeEndLink.TabStop = true;
-			this.RangeEndLink.Text = "(range end)";
-			this.RangeEndLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RangeEndLink_LinkClicked);
 			// 
 			// BackLink
 			// 
@@ -134,7 +102,7 @@
 			this.BackLink.Location = new System.Drawing.Point(433, 13);
 			this.BackLink.Name = "BackLink";
 			this.BackLink.Size = new System.Drawing.Size(32, 13);
-			this.BackLink.TabIndex = 7;
+			this.BackLink.TabIndex = 16;
 			this.BackLink.TabStop = true;
 			this.BackLink.Text = "Back";
 			this.BackLink.Visible = false;
@@ -220,11 +188,48 @@
 			this.RenderDisplayLabel.TabIndex = 14;
 			this.RenderDisplayLabel.Text = "Display:";
 			// 
+			// RangeEndLink
+			// 
+			this.RangeEndLink.AutoSize = true;
+			this.RangeEndLink.Location = new System.Drawing.Point(82, 70);
+			this.RangeEndLink.Name = "RangeEndLink";
+			this.RangeEndLink.Reference = null;
+			this.RangeEndLink.Size = new System.Drawing.Size(0, 13);
+			this.RangeEndLink.TabIndex = 7;
+			// 
+			// RangeStartLink
+			// 
+			this.RangeStartLink.AutoSize = true;
+			this.RangeStartLink.Location = new System.Drawing.Point(82, 51);
+			this.RangeStartLink.Name = "RangeStartLink";
+			this.RangeStartLink.Reference = null;
+			this.RangeStartLink.Size = new System.Drawing.Size(0, 13);
+			this.RangeStartLink.TabIndex = 5;
+			// 
+			// DataTypeLink
+			// 
+			this.DataTypeLink.AutoSize = true;
+			this.DataTypeLink.DataType = null;
+			this.DataTypeLink.Location = new System.Drawing.Point(82, 32);
+			this.DataTypeLink.Name = "DataTypeLink";
+			this.DataTypeLink.Size = new System.Drawing.Size(0, 13);
+			this.DataTypeLink.TabIndex = 3;
+			// 
+			// ThePanel
+			// 
+			this.ThePanel.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+						| System.Windows.Forms.AnchorStyles.Right)));
+			this.ThePanel.Location = new System.Drawing.Point(13, 165);
+			this.ThePanel.Name = "ThePanel";
+			this.ThePanel.Size = new System.Drawing.Size(459, 185);
+			this.ThePanel.TabIndex = 17;
+			// 
 			// ReferenceForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(484, 262);
+			this.ClientSize = new System.Drawing.Size(484, 362);
+			this.Controls.Add(this.ThePanel);
 			this.Controls.Add(this.RenderDisplayTextBox);
 			this.Controls.Add(this.RenderDisplayLabel);
 			this.Controls.Add(this.RenderLongTextBox);
@@ -255,11 +260,11 @@
 		private System.Windows.Forms.Label ReferenceLabel;
 		private System.Windows.Forms.TextBox ReferenceTextBox;
 		private System.Windows.Forms.Label DataTypeLabel;
-		private System.Windows.Forms.LinkLabel DataTypeLink;
+		private DataTypeLinkLabel DataTypeLink;
 		private System.Windows.Forms.Label RangeStartLabel;
-		private System.Windows.Forms.LinkLabel RangeStartLink;
+		private ReferenceLinkLabel RangeStartLink;
 		private System.Windows.Forms.Label RangeEndLabel;
-		private System.Windows.Forms.LinkLabel RangeEndLink;
+		private ReferenceLinkLabel RangeEndLink;
 		private System.Windows.Forms.LinkLabel BackLink;
 		private System.Windows.Forms.TextBox RenderShortTextBox;
 		private System.Windows.Forms.Label RenderShortLabel;
@@ -269,6 +274,7 @@
 		private System.Windows.Forms.Label RenderLongLabel;
 		private System.Windows.Forms.TextBox RenderDisplayTextBox;
 		private System.Windows.Forms.Label RenderDisplayLabel;
+		private System.Windows.Forms.Panel ThePanel;
 	}
 }
 

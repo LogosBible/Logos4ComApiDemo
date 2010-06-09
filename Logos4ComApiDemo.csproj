@@ -54,6 +54,21 @@
     <Compile Include="ApplicationPane.Designer.cs">
       <DependentUpon>ApplicationPane.cs</DependentUpon>
     </Compile>
+    <Compile Include="BibleDataTypePane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BibleDataTypePane.Designer.cs">
+      <DependentUpon>BibleDataTypePane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BibleReferencePane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BibleReferencePane.Designer.cs">
+      <DependentUpon>BibleReferencePane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataTypeLinkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReferenceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +110,12 @@
     <EmbeddedResource Include="ApplicationPane.resx">
       <DependentUpon>ApplicationPane.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BibleDataTypePane.resx">
+      <DependentUpon>BibleDataTypePane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BibleReferencePane.resx">
+      <DependentUpon>BibleReferencePane.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReferenceForm.resx">
       <DependentUpon>ReferenceForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +152,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ReferenceLinkLabel.cs">
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -29,28 +29,18 @@ namespace Logos4ComApiDemo
 			UpdateControls();
 
 			ReferenceTextBox.Text = reference.Save();
-			DataTypeLink.Text = reference.DataType.Alias;
-			RangeStartLink.Text = reference.IsRange ? reference.RangeStart.Save() : string.Empty;
-			RangeEndLink.Text = reference.IsRange ? reference.RangeEnd.Save() : string.Empty;
+			DataTypeLink.DataType = reference.DataType;
+			RangeStartLink.Reference = reference.IsRange ? reference.RangeStart : null;
+			RangeEndLink.Reference = reference.IsRange ? reference.RangeEnd : null;
 			RenderShortTextBox.Text = reference.Render("short");
 			RenderMediumTextBox.Text = reference.Render("medium");
 			RenderLongTextBox.Text = reference.Render("long");
 			RenderDisplayTextBox.Text = reference.Render("display");
-		}
 
-		private void DataTypeLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-		{
-			MainForm.Instance.DataTypeForm.DataType = m_reference.DataType;
-		}
-
-		private void RangeStartLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-		{
-			Reference = m_reference.RangeStart;
-		}
-
-		private void RangeEndLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-		{
-			Reference = m_reference.RangeEnd;
+			ThePanel.Controls.Clear();
+			object details = reference.Details;
+			if (details is ILogosBibleReferenceDetails)
+				ThePanel.Controls.Add(new BibleReferencePane(reference));
 		}
 
 		private void BackLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

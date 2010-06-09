@@ -102,7 +102,7 @@ namespace Logos4ComApiDemo
 				{
 					m_app.PanelActivated -= LogosApplication_PanelActivated;
 					m_app.PanelClosed -= LogosApplication_PanelClosed;
-					m_app.PanelNavigated -= LogosApplication_PanelNavigated;
+					m_app.PanelChanged -= LogosApplication_PanelChanged;
 					m_app.PanelOpened -= LogosApplication_PanelOpened;
 					m_app.Exiting -= LogosApplication_Exiting;
 				}
@@ -122,7 +122,7 @@ namespace Logos4ComApiDemo
 				{
 					m_app.PanelActivated += LogosApplication_PanelActivated;
 					m_app.PanelClosed += LogosApplication_PanelClosed;
-					m_app.PanelNavigated += LogosApplication_PanelNavigated;
+					m_app.PanelChanged += LogosApplication_PanelChanged;
 					m_app.PanelOpened += LogosApplication_PanelOpened;
 					m_app.Exiting += LogosApplication_Exiting;
 				}
@@ -145,6 +145,7 @@ namespace Logos4ComApiDemo
 			// record an event, keeping the last one visible
 			EventsListBox.Items.Add(text);
 			EventsListBox.SelectedIndex = EventsListBox.Items.Count - 1;
+			EventCountLabel.Text = EventsListBox.Items.Count.ToString();
 		}
 
 		private void RecordPanelEvent(string text, object panel)
@@ -194,10 +195,10 @@ namespace Logos4ComApiDemo
 				() => RecordPanelEvent("PanelClosed", panel));
 		}
 
-		private void LogosApplication_PanelNavigated(object panel)
+		private void LogosApplication_PanelChanged(object panel, object hint)
 		{
 			Invoke(
-				() => RecordPanelEvent("PanelNavigated", panel));
+				() => RecordPanelEvent("PanelChanged", panel));
 		}
 
 		private void LogosApplication_PanelOpened(object panel)
